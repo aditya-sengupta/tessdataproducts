@@ -1,0 +1,3 @@
+[submodule "tess-point"]
+	path = tess-point
+	url = https://github.com/christopherburke/tess-point
