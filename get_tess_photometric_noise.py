@@ -1,7 +1,9 @@
-## NOTE: You probably don't want to actually run this -  
+## NOTE: You probably don't want to actually run this, it takes a really long time 
+## and it'd be more efficient to just compute these from the source paper: https://arxiv.org/pdf/1706.00495.pdf, section 3.3
+## Alternatively
 ## Query the Web TESS Viewer for the photometric noise of every star in a sector.
 
-import utils
+import .stellar
 import urllib.request as request
 import urllib.error as error
 import pandas as pd
@@ -23,7 +25,7 @@ def get_tess_photometric_noise(sector_num, datapath=utils.TESS_DATAPATH, subpath
     fullpath = os.path.join(datapath, subpath)
     
     get_url = lambda ticid, v, j, k: "https://heasarc.gsfc.nasa.gov/cgi-bin/tess/webtess/wtv.py?V={0}&J={1}&Ks={2}".format(str(v), str(j), str(k))
-    stlr = utils.get_tess_stars_from_sector(sector_num)
+    stlr = stellar.get_tess_stars_from_sector(sector_num)
 
     ids_to_skip = set()
     if os.path.exists(fullpath):

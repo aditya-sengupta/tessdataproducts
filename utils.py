@@ -3,7 +3,6 @@
 import os
 import requests
 
-
 # globals
 TESS_DATAPATH = os.path.abspath(os.getcwd()) + "/data/tesstargets/" # or change to any other desired path
 assert TESS_DATAPATH[-1] == os.path.sep, "must end datapath with {}".format(os.path.sep)
@@ -14,7 +13,7 @@ GLOBAL_FORCE_REDOWNLOAD = False
 # utility lambdas for filling URLs
 get_sector_pointings = lambda sector: 'https://tess.mit.edu/wp-content/uploads/all_targets_S{}_v1.csv'.format(str(sector).zfill(3))
 
-## CHECKS
+# checks
 def check_datapath():
     if not os.path.isdir(TESS_DATAPATH):
         if GLOBAL_VERBOSE:
