@@ -17,7 +17,11 @@ import importlib
 tesspoint_function = importlib.import_module("tess-point.tess_stars2px").tess_stars2px_function_entry
 import lightkurve as lk
 
-import utils, stellar, planetary
+import src.ffi as ffi
+import src.lightcurve as lightcurve
+import src.planetary as planetary
+import src.stellar as stellar
+import src.utils as utils
 
 if __name__ == "__main__":
     planetary.get_tois("caltech")
