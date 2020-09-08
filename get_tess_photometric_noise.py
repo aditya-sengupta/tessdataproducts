@@ -1,9 +1,11 @@
-## NOTE: You probably don't want to actually run this, it takes a really long time 
+## NOTE: You probably don't want to actually run this, it takes a really long time,
 ## and it'd be more efficient to just compute these from the source paper: https://arxiv.org/pdf/1706.00495.pdf, section 3.3
-## Alternatively
+## For now these are just CSVs you can get from the repo, and later I'll update it with Drive integration or compute here,
+## so ideally this should never be run and is just here for the sake of completeness.
+
 ## Query the Web TESS Viewer for the photometric noise of every star in a sector.
 
-import .stellar
+import stellar
 import urllib.request as request
 import urllib.error as error
 import pandas as pd

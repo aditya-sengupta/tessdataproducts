@@ -4,14 +4,18 @@ import os
 import requests
 
 # globals
-TESS_DATAPATH = os.path.abspath(os.getcwd()) + "/data/tesstargets/" # or change to any other desired path
+TESS_DATAPATH = os.path.abspath(os.getcwd()) + "/data/" # or change to any other desired path
 assert TESS_DATAPATH[-1] == os.path.sep, "must end datapath with {}".format(os.path.sep)
 NUM_TESS_SECTORS = 27
-GLOBAL_VERBOSE = True
-GLOBAL_FORCE_REDOWNLOAD = False
+GLOBAL_VERBOSE = True # whether to print statements about script progress
+GLOBAL_FORCE_REDOWNLOAD = False # whether to force data products to redownload from source, e.g. if more TOIs have been released
 
 # utility lambdas for filling URLs
 get_sector_pointings = lambda sector: 'https://tess.mit.edu/wp-content/uploads/all_targets_S{}_v1.csv'.format(str(sector).zfill(3))
+get_toi_catalog = lambda catalog_source: {
+        "caltech" : "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=toi",
+        "mit" : "https://tev.mit.edu/data/collection/193/csv/6/"
+    }.get(catalog_source)
 
 # checks
 def check_datapath():

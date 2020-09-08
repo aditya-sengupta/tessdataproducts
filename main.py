@@ -14,10 +14,10 @@ import numpy as np
 import pandas as pd
 from io import BytesIO
 import importlib
-tesspoint = importlib.import_module("tess-point")
+tesspoint_function = importlib.import_module("tess-point.tess_stars2px").tess_stars2px_function_entry
 import lightkurve as lk
 
-import utils, stellar
+import utils, stellar, planetary
 
 if __name__ == "__main__":
-    stellar.get_tess_stars_from_sector(5)
+    planetary.get_tois("caltech")
