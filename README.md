@@ -1,7 +1,9 @@
 # TESS Data Products
 A collection of utilities to get TESS data products from all their different homes across the web!
 
-![](https://imgs.xkcd.com/comics/standards.png)
+<p align="center">
+    <img src="https://imgs.xkcd.com/comics/standards.png" />
+</p>
 
 By running the functions here, the directory ./data/ (or any other target directory specified in utils.py's TESS_DATAPATH parameter) will be populated with:
 

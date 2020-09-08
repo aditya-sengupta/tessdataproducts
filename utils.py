@@ -12,7 +12,7 @@ GLOBAL_FORCE_REDOWNLOAD = False # whether to force data products to redownload f
 
 # utility lambdas for filling URLs
 get_sector_pointings = lambda sector: 'https://tess.mit.edu/wp-content/uploads/all_targets_S{}_v1.csv'.format(str(sector).zfill(3))
-get_toi_catalog = lambda catalog_source: {
+get_toi_url = lambda catalog_source: {
         "caltech" : "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=toi",
         "mit" : "https://tev.mit.edu/data/collection/193/csv/6/"
     }.get(catalog_source)
